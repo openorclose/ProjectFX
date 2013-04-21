@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="gui.accountpanel.Controller">
+    <center>
+        <TabPane>
+            <Tab text="Blogs">
+                <BorderPane>
+                    <top>
+                        <Button onAction="#createNewBlog" text="Make New Blog"/>
+                    </top>
+                    <center>
+                        <ScrollPane>
+                            <VBox fx:id="blogsPanel" spacing="10" />
+                        </ScrollPane>
+                    </center>
+
+                </BorderPane>
+
+            </Tab>
+            <Tab text="Collaborators">
+
+            </Tab>
+            <Tab text="Profile">
+
+            </Tab>
+        </TabPane>
+    </center>
+    <bottom>
+        <fx:include source="statusbar/gui.fxml"/>
+    </bottom>
+</BorderPane>

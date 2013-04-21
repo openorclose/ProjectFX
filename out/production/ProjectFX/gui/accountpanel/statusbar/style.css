@@ -1,0 +1,10 @@
+.button {
+    -fx-background-color: #DFB951;
+}
+.flowpane {
+    -fx-background-color: #8fbc8f;
+}
+.blinkinglabel {
+    -fx-background-color: #DFB951;
+    -fx-padding: 5;
+}

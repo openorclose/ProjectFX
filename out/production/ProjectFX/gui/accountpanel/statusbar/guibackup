@@ -1,0 +1,52 @@
+package gui.start.statusbar;
+
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.border.BevelBorder;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
+public class Gui extends JPanel {
+    private static Gui instance = new Gui();
+    private Gui() {
+        setLayout (new FlowLayout (FlowLayout.LEFT){{
+            setHgap (20);
+        }});
+        setBorder (new BevelBorder (BevelBorder.LOWERED));
+    }
+    public void push (String text) {
+        BlinkingLabel previousLabel;
+        try {
+            previousLabel = (BlinkingLabel) Manager.getLast();
+            if (text.equals (previousLabel.getText ())) {
+                previousLabel.blinkMore ();
+                return;
+            }
+        } catch (Exception ignored) {
+
+        }
+        BlinkingLabel blinkingLabel = new BlinkingLabel (this, text);
+        push (blinkingLabel);
+    }
+    public void push (JComponent component) {
+        Manager.add (component);
+        add (component);
+        repaint();
+        revalidate ();
+    }
+    public JComponent pop() {
+        return pop (Manager.getLast());
+    }
+    public JComponent pop (JComponent component) {
+        remove (component);
+        Manager.remove (component);
+        repaint ();
+        return component;
+    }
+    public void setPreferredSize() {
+        setPreferredSize (new Dimension (getParent ().getWidth (), 30));
+    }
+    public static Gui getInstance() {
+        return instance;
+    }
+}

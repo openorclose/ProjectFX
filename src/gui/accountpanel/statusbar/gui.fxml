@@ -1,0 +1,8 @@
+<?import javafx.scene.layout.FlowPane?>
+<FlowPane   fx:id = "statusbar"
+            fx:controller="gui.accountpanel.statusbar.Controller"
+            prefHeight="30"
+            hgap = "10"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="gui\accountpanel\statusbar\style.css"
+            styleClass="flowpane" />

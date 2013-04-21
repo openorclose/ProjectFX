@@ -1,0 +1,9 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="gui.start.login.Controller">
+    <Label text="Username:"/>
+    <TextField text = "admin" fx:id="username"/>
+    <Label text = "Password:"/>
+    <PasswordField text = "password" fx:id = "password"/>
+    <Button text="Login" onAction = "#login"/>
+</VBox>

@@ -1,0 +1,18 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane fx:controller="gui.start.Controller"  xmlns:fx="http://javafx.com/fxml" stylesheets = "gui/start/style.css">
+    <center>
+        <TabPane>
+            <Tab text="Login">
+                <fx:include source="login/gui.fxml" />
+            </Tab>
+            <Tab text="Register">
+                <fx:include source="register/gui.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+    <bottom>
+        <fx:include source="statusbar/gui.fxml" fx:id="statusbar" />
+    </bottom>
+</BorderPane>
