@@ -1,10 +1,5 @@
 package common;
 
-import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
-
-import javax.imageio.stream.FileImageOutputStream;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -66,7 +61,7 @@ public class Account {
             try {
                 blogContributionsFile.appendText (name + "\n");
                 CustomFile.getFolderAtRoot ("blogs").getFolder (name).mkdir ();
-                Util.alert ("Success!", "Blog " + name + " was created successfully!");
+                gui.accountpanel.statusbar.Controller.add ("Success! Blog " + name + " was created successfully!");
             } catch (Exception e) {
             }
         }
